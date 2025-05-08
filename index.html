@@ -49,17 +49,16 @@
 
   <body class="bg-pattern-light dark:bg-pattern-dark flex justify-center items-center p-4">
     <div class="absolute top-4 right-4 md:top-8 md:right-8">
-        <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-all">
+      <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-all">
         <!-- Sol (tema claro) -->
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden dark:block text-yellow-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
         </svg>
         <!-- Lua (tema escuro) -->
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
         </svg>
-        <!-- <div class="theme-toggle-circle"></div> -->
-      </div>
+      </button>
     </div>
 
     <div class="bio-container bg-white dark:bg-gray-800 rounded-3xl shadow-xl p-6 md:p-8 flex flex-col items-center">
@@ -120,37 +119,36 @@
         <div class="text-center">
           <img src="imagens/Logo_azul_corrido_eps.png" alt="Logo Studio Diego Sousa" class="logo logo-light" loading="lazy" height="35" />
           <img src="imagens/Logo_branco_corrido_eps.png" alt="Logo Studio Diego Sousa" class="logo logo-dark" loading="lazy" height="35" />
-          <p class="text-sm text-gray-600 dark:text-gray-300 mb-2">Desenvolvido por Studio Diego Sousa.</p>
           <p class="text-xs text-gray-500 dark:text-gray-200">© 2025 Diego Pinto de Sousa. Todos os direitos reservados.</p>
         </div>
       </div>
     </div>
 
     <script>
-        // Alternar tema claro/escuro
-        const themeToggle = document.getElementById('theme-toggle');
-        const html = document.documentElement;
-        
-        function toggleTheme() {
-            if (html.classList.contains('dark')) {
-                html.classList.remove('dark');
-                themeToggle.classList.add('light');
-                localStorage.setItem('theme', 'light');
-            } else {
-                html.classList.add('dark');
-                themeToggle.classList.remove('light');
-                localStorage.setItem('theme', 'dark');
-            }
+      // Alternar tema claro/escuro
+      const themeToggle = document.getElementById('theme-toggle');
+      const html = document.documentElement;
+
+      function toggleTheme() {
+        if (html.classList.contains('dark')) {
+          html.classList.remove('dark');
+          themeToggle.classList.add('light');
+          localStorage.setItem('theme', 'light');
+        } else {
+          html.classList.add('dark');
+          themeToggle.classList.remove('light');
+          localStorage.setItem('theme', 'dark');
         }
-        
-        themeToggle.addEventListener('click', toggleTheme);
-        
-        // Verificar tema salvo no localStorage
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'light') {
-            html.classList.remove('dark');
-            themeToggle.classList.add('light');
-        }
+      }
+
+      themeToggle.addEventListener('click', toggleTheme);
+
+      // Verificar tema salvo no localStorage
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light') {
+        html.classList.remove('dark');
+        themeToggle.classList.add('light');
+      }
     </script>
   </body>
 
